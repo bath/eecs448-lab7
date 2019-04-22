@@ -1,4 +1,4 @@
 Bugs found/predicted:
-1) Add front / remove front does not properly decrease size
+1) Remove front / back does not properly decrease size
 2)
 3)

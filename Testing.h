@@ -19,6 +19,7 @@ public:
   void addF();
   void addB();
   void search();
+  void search2();
   void print(bool pf);
   void remFront();
   void remBack();
