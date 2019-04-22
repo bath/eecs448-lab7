@@ -3,6 +3,7 @@
 #ifndef TEST_H
 #define TEST_H
 
+#include "LinkedListOfInts.h"
 #include <iostream>
 #include <string.h>
 
@@ -14,7 +15,11 @@ class Testing
 public:
   Testing(); //default constructor
   void runTests();
+  void empty();
+  void addF();
+  void addB();
 private:
+  LinkedListOfInts L1;
 
 
 };

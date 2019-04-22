@@ -1,11 +1,12 @@
 /**
-*	@author 
-*	@date 
+*	@author
+*	@date
 *	@file main.cpp
 *	@brief driver for LinkedList demo
 */
 #include <iostream>
 #include "LinkedListOfInts.h"
+#include "Testing.h"
 
 int main(int argc, char** argv)
 {
@@ -16,10 +17,10 @@ int main(int argc, char** argv)
 	//Example:
 	//TestSuite myTester;
 	//myTester.runTests();
-
+	Testing T1;
+	T1.runTests();
 	std::cout << "Running...\nAnd we're done.\nGoodbye.\n";
-	
+
 	return (0);
 
 }
-
