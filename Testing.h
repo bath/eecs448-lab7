@@ -18,6 +18,13 @@ public:
   void empty();
   void addF();
   void addB();
+  void search();
+  void print(bool pf);
+  void remFront();
+  void remBack();
+  void arF();
+  void arB();
+
 private:
   LinkedListOfInts L1;
 

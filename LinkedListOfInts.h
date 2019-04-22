@@ -35,7 +35,7 @@ class LinkedListOfInts : public List<int>
 	/** @pre None.
 	*   @post None.
 	*   @return the number of elements in the list.
-	*/	
+	*/
 	int size() const;
 
 	/** @pre the value is a valid T.

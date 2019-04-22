@@ -17,10 +17,11 @@ int main(int argc, char** argv)
 	//Example:
 	//TestSuite myTester;
 	//myTester.runTests();
+	cout<<"\n------------------------------------------\n";
 	Testing T1;
 	T1.runTests();
-	std::cout << "Running...\nAnd we're done.\nGoodbye.\n";
-
+	//std::cout << "Running...\nAnd we're done.\nGoodbye.\n";
+	cout<<"------------------------------------------\n\n";
 	return (0);
 
 }
