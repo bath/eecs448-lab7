@@ -6,6 +6,9 @@ Testing::Testing()
 {
 }
 
+Testing::~Testing()
+{
+}
 
 void Testing::runTests()
 {
@@ -17,6 +20,9 @@ void Testing::runTests()
 
   cout<<"Size returns correctly after adding 50 items to the back. ";
   addB();
+
+  cout<<"List is in the order it was added in. ";
+  listOrd();
 
   cout<<"Searching for invalid number &  all valid numbers added so far. ";
   search();
@@ -54,7 +60,6 @@ void Testing::empty()
 
 void Testing::addF() //works as intended
 {
-  //LinkedListOfInts H1;
   for (int i = 50; i > 0; i--) {
     L1.addFront(i);
   }
@@ -63,7 +68,6 @@ void Testing::addF() //works as intended
   {
     print(true);
   }
-
   else
   {
     print(false);
@@ -72,11 +76,16 @@ void Testing::addF() //works as intended
 
 void Testing::addB()
 {
+  vector<int> vec;
+
   for (int i = 50; i < 100; i++) {
     L1.addBack(i);
-    cout<<"Adding: "<<i<<'\n';
   }
 
+  vec = L1.toVector();
+  // for (int i = 0; i < vec.size(); i++) {
+  //   cout<<i<<"\n";
+  // }
   if(L1.size() == 100)
   {
     print(true);
@@ -89,21 +98,31 @@ void Testing::addB()
 
   //something is messed up here in the adding of back on the list.
   //adding to front instead of the back?
-  cout<<"vector stuff\n";
+};
+
+void Testing::listOrd()
+{
   vector<int> vec;
   vec = L1.toVector();
-  for (int i = 0; i < L1.size(); i++) {
-    cout<<"Vector reads"<<vec[i]<<"\n";
+
+  bool flag = true;
+
+  for (int i = 0; i < L1.size(); i++)
+  {
+    if(i != vec[i])
+    {
+      flag = false;
+    }
   }
+  print(flag);
 
+}
 
-
-};
 
 void Testing::search()
 {
   bool flag = true;
-  if(L1.search(100) == false)
+  if(L1.search(65468) == false)
   {
     cout<<"[PASSED] ";
   }
@@ -113,9 +132,10 @@ void Testing::search()
   }
 
 
-  for (int i = 0; i < L1.size(); i++) {
+  for (int i = 1; i < L1.size(); i++) {
     if(L1.search(i) == false)
     {
+      cout<<"didnt find "<<i<<"\n";
       flag = false;
     }
   }

@@ -14,6 +14,7 @@ class Testing
 {
 public:
   Testing(); //default constructor
+  ~Testing();
   void runTests();
   void empty();
   void addF();
@@ -25,6 +26,7 @@ public:
   void remBack();
   void arF();
   void arB();
+  void listOrd();
 
 private:
   LinkedListOfInts L1;

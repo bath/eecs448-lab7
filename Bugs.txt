@@ -1,4 +1,29 @@
-Bugs found/predicted:
+Bugs found:
 1) Remove front / back does not properly decrease size
-2)
-3)
+2) Add back adds items to the front of the list, rather than the back of the list
+3) See below for memory leak
+
+==20543==
+==20543== HEAP SUMMARY:
+==20543==     in use at exit: 74,336 bytes in 103 blocks
+==20543==   total heap usage: 112 allocs, 9 frees, 76,380 bytes allocated
+==20543==
+==20543== 1,632 (16 direct, 1,616 indirect) bytes in 1 blocks are definitely lost in loss record 4 of 5
+==20543==    at 0x4C2E0EF: operator new(unsigned long) (vg_replace_malloc.c:333)
+==20543==    by 0x400FEB: LinkedListOfInts::addFront(int) (LinkedListOfInts.cpp:81)
+==20543==    by 0x400FC2: LinkedListOfInts::addBack(int) (LinkedListOfInts.cpp:74)
+==20543==    by 0x402368: Testing::arB() (Testing.cpp:185)
+==20543==    by 0x401E9F: Testing::runTests() (Testing.cpp:35)
+==20543==    by 0x400D17: main (main.cpp:22)
+==20543==
+==20543== LEAK SUMMARY:
+==20543==    definitely lost: 16 bytes in 1 blocks
+==20543==    indirectly lost: 1,616 bytes in 101 blocks
+==20543==      possibly lost: 0 bytes in 0 blocks
+==20543==    still reachable: 72,704 bytes in 1 blocks
+==20543==         suppressed: 0 bytes in 0 blocks
+==20543== Reachable blocks (those to which a pointer was found) are not shown.
+==20543== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==20543==
+==20543== For counts of detected and suppressed errors, rerun with: -v
+==20543== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
